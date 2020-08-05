@@ -7,7 +7,6 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 const Styles = styled.div`
 
-font-family: 'Roboto', sans-serif;
 `
 class App extends React.Component {
   state={
@@ -28,4 +27,19 @@ class App extends React.Component {
     )
   }
 }
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // fetchUsers: (users) => dispatch({ type: 'FETCH_USERS', users: users }),
+    // setLoggedIn: (user) => dispatch({type: 'SET_LOGIN', user: user}),
+    // fetchDatasets: (datasets) => dispatch({type: 'FETCH_DATASETS', datasets: datasets})
+  }
+}
+const mapStateToProps = (state) => {
+  return {
+    // current_user: state.userReducer.current_user,
+    // users: state.userReducer.users,
+    // isLoggedIn: state.userReducer.isLoggedIn,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
