@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import styled from 'styled-components'
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+const Styles = styled.div`
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+font-family: 'Roboto', sans-serif;
+`
+class App extends React.Component {
+  state={
+    navType: '0'
+  }
+  render(){
+    return (
+      <Styles>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </Styles>
+    )
+  }
 }
-
 export default App;
