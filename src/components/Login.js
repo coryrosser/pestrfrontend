@@ -5,14 +5,44 @@ import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
+const Styles = styled.div`
+`
+
 class Login extends Component {
+    state={
+        email: '',
+        password: '',
+    }
+
+    setEmail = (value) => {
+        this.setState({email: value})
+    }
+    setPassword = (value) => {
+        this.setState({password: value})
+    }
+    // onLogin = (user) => {
+    //     debugger
+    //     fetch('http://localhost:3000/login', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({user: user})
+    //     })
+    //     .then(res => res.json())
+    //     .then(user => {
+    //         localStorage.setItem('user', `${user.user.id}` )
+    //         this.props.sendLogin(user.user)
+    //         this.props.history.push('/')
+    //     })
+    // }
     render() {
         return (
             <Styles>
                 <div className='contain'>
                     <Card className='form-card'>
                     <p className='form-header'>Sign In</p>
-                    <p className='form-header2'>Welcome back to VisTrack</p>
+                    <p className='form-header2'>Welcome back to Pestr</p>
                     <Form
                 className='login-form'
             onSubmit={e => {

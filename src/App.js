@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import styled from 'styled-components'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
+import SignUp from './components/SignUp'
+import Login from './components/Login'
 const Styles = styled.div`
 
 `
@@ -20,6 +22,12 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/'>
               <Home />
+            </Route>
+            <Route exact path='/login'>
+              <SignUp />
+            </Route>
+            <Route exact path='/signup'>
+              <Login />
             </Route>
           </Switch>
         </Router>

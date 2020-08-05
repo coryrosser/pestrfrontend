@@ -62,7 +62,7 @@ export default function Navbar() {
                 md={1}
                 className='nav-link-col'>
                     <a 
-                    href='/'
+                    href='/login'
                     className='nav-link-item'>
                         Login
                     </a>
@@ -71,7 +71,7 @@ export default function Navbar() {
                 md={1}
                 className='nav-link-col'>
                     <a 
-                    href='/'
+                    href='/signup'
                     className='nav-link-item'>
                         Sign Up
                     </a>
