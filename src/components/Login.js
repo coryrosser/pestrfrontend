@@ -20,22 +20,22 @@ class Login extends Component {
     setPassword = (value) => {
         this.setState({password: value})
     }
-    // onLogin = (user) => {
-    //     debugger
-    //     fetch('http://localhost:3000/login', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({user: user})
-    //     })
-    //     .then(res => res.json())
-    //     .then(user => {
-    //         localStorage.setItem('user', `${user.user.id}` )
-    //         this.props.sendLogin(user.user)
-    //         this.props.history.push('/')
-    //     })
-    // }
+    onLogin = (user) => {
+        debugger
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({user: user})
+        })
+        .then(res => res.json())
+        .then(user => {
+            localStorage.setItem('user', `${user.user.id}` )
+            this.props.sendLogin(user.user)
+            this.props.history.push('/dashboard')
+        })
+    }
     render() {
         return (
             <Styles>
@@ -99,7 +99,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // sendLogin: (user) => dispatch({type: 'LOGIN', user: user})
+        sendLogin: (user) => dispatch({type: 'LOGIN', user: user})
     } 
 }
 
