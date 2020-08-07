@@ -11,8 +11,18 @@ const Styles = styled.div`
 
 `
 class App extends React.Component {
-  state={
-    navType: '0'
+
+  componentDidMount() {
+    this.getUsers()
+  }
+
+  getUsers = () => {
+    fetch('http://localhost:3000/users')
+    .then(res => res.json())
+    .then(userData => {
+      // this.props.fetchUsers(userData)
+      console.log(userData)
+    })
   }
   render(){
     return (

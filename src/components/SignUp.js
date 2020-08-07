@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Form, Button, Card,Row, Col, InputGroup} from 'react-bootstrap'
+import { Form, Button, Card, Row, Col, InputGroup} from 'react-bootstrap'
 import {FaLock, FaEnvelope, FaUser} from 'react-icons/fa'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
