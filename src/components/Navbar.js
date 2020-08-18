@@ -51,7 +51,7 @@ export default function Navbar() {
                 className='brand-col'>
                     <div className='nav-brand-text'>
                         <a 
-                        href='/'>
+                        href='/dashboard'>
                             <FaToolbox /> Pestr
                         </a>
                     </div>

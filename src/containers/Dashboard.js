@@ -20,7 +20,7 @@ const Styles = styled.div`
 
 class Dashboard extends Component {
     componentDidMount() {
-        console.log(this.props)
+        console.log(this.props.current_user)
     }
     render() {
         return (
@@ -32,6 +32,7 @@ class Dashboard extends Component {
                         <SideBar />
                     </Col>
                     <Col>
+
                     </Col>
                 </Row>
             </Styles>

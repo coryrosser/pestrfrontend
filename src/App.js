@@ -32,7 +32,7 @@ class App extends React.Component {
     fetch('http://localhost:3000/users')
     .then(res => res.json())
     .then(userData => {
-      // this.props.fetchUsers(userData)
+      this.props.fetchUsers(userData)
       console.log(userData)
     })
   }
@@ -43,7 +43,9 @@ class App extends React.Component {
           <Navbar />
           <Switch>
             <Route exact path='/'>
-              {/* <Home /> */}
+              <Home /> 
+            </Route>
+            <Route exact path='/dashboard'>
               <Dashboard />
             </Route>
             <Route exact path='/signup'>

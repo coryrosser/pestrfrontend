@@ -16,6 +16,10 @@ const Styles = styled.div`
         color: #f7f7f7;
         font-size: 4vh;
     }
+    a {
+        text-decoration: none;
+        color: #f7f7f7;
+    }
 `
 
 const SideBar = () => {
@@ -23,7 +27,7 @@ const SideBar = () => {
         <Styles>
             <ListGroup className='sidebar-list'>
                 <ListGroup.Item className='sidebar-list'>
-                    <AiOutlineHome className='sidebar-icon'/>
+                    <a href='/'><AiOutlineHome className='sidebar-icon'/></a>
                 </ListGroup.Item>
                 <ListGroup.Item className='sidebar-list'>
                     <AiOutlineTeam className='sidebar-icon'/>
