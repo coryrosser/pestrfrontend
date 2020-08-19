@@ -26,6 +26,15 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getUsers()
+    this.getGroups()
+  }
+
+  getGroups = () => {
+    fetch('http://localhost:3000/groups')
+    .then(res => res.json())
+    .then(groupData => {
+      this.props.fetchGroups(groupData)
+    })
   }
 
   getUsers = () => {
@@ -33,7 +42,6 @@ class App extends React.Component {
     .then(res => res.json())
     .then(userData => {
       this.props.fetchUsers(userData)
-      console.log(userData)
     })
   }
   render(){
@@ -64,6 +72,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchUsers: (users) => dispatch({ type: 'FETCH_USERS', users: users }),
     setLoggedIn: (user) => dispatch({type: 'SET_LOGIN', user: user}),
+    fetchGroups: (groups) => dispatch({type: 'FETCH_GROUPS', groups: groups})
   }
 }
 const mapStateToProps = (state) => {

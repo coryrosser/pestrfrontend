@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Row, Col} from 'react-bootstrap'
 import SideBar from '../components/SideBar'
+import UserDash from '../components/UserDash'
 import styled from 'styled-components'
+
 
 const Styles = styled.div`
     height: 92.5vh;
@@ -32,7 +34,9 @@ class Dashboard extends Component {
                         <SideBar />
                     </Col>
                     <Col>
-
+                        { this.props.current_user ?
+                        <UserDash /> :
+                        <h1>Loading</h1>}
                     </Col>
                 </Row>
             </Styles>
@@ -41,9 +45,7 @@ class Dashboard extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        current_user: state.userReducer.current_user,
-        users: state.userReducer.users,
-        isLoggedIn: state.userReducer.isLoggedIn,
+        current_user: state.userReducer.current_user
     }
 }
 export default connect(mapStateToProps, null)(Dashboard)
