@@ -7,6 +7,7 @@ export default (state = {}, action) => {
                 groups: action.groups
             }
         case 'SET_ACTIVE':
+            console.log(action.group)
             return {
                 ...state,
                 activeGroup: action.group

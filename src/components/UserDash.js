@@ -3,17 +3,18 @@ import { connect } from 'react-redux'
 import {Row, Col, Card} from 'react-bootstrap'
 import styled from 'styled-components'
 import UserGroupCard from './UserGroupCard'
+import ActiveGroupContainer from '../containers/ActiveGroupContainer'
 
 const Styles = styled.div`
     .notification-row {
         width: 100%;
         margin-left: 0;
-        background: rgb(255,0,0,0.4);
     }
     .updates-row {
         width: 100%;
         margin-left: 0;
-        background: rgb(0,255,0,0.4);
+    }
+    .groups-col {
     }
 `
 
@@ -35,12 +36,17 @@ class UserDash extends Component {
                 </Row>
                 <Row className='updates-row'>
                     <Col 
-                    xs={12} md={8}
-                    className='updates-col'>
+                    xs={12} md={4}
+                    className='groups-col'>
                         {this.renderUserGroups()}
                     </Col>
                     <Col xs={12} md={4}>
-                        <h1> other stuff</h1>
+                        {this.props.activeGroup ? 
+                        <ActiveGroupContainer />
+                        : 
+                        <div>
+                            Choose a group to view
+                        </div>}
                     </Col>
                 </Row>
             </Styles>
@@ -51,7 +57,8 @@ class UserDash extends Component {
 const mapStateToProps = (state) => {
     return {
         current_user: state.userReducer.current_user,
-        user_groups: state.groupReducer.groups
+        user_groups: state.groupReducer.groups,
+        activeGroup: state.groupReducer.activeGroup
     }
 }
 
